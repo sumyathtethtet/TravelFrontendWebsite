@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=divice-width initial-scale=1,shrink-to-fit=no">
+  <title>Local Travel and Tour</title>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+	<style type="text/css">
+      .input-group {
+        margin-bottom: 20px;
+      }
+      a{
+
+      }
+      .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 10px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 95%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.image1 {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle1 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.container2:hover .image {
+  opacity: 0.3;
+}
+
+.container2:hover .middle {
+  opacity: 1;
+}
+.container1:hover .image1 {
+  opacity: 0.3;
+}
+
+.container1:hover .middle1 {
+  opacity: 1;
+}
+.container3:hover .image3 {
+  opacity: 0.3;
+}
+
+.container3:hover .middle3 {
+  opacity: 1;
+}
+.container4:hover .image4 {
+  opacity: 0.3;
+}
+
+.container4:hover .middle4 {
+  opacity: 1;
+}
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+nav a:hover{
+  background-color: white;
+  color: white;
+  border-radius: 5px;
+}
+/*button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+*/
+/*a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}*/
+
+/*button:hover, a:hover {
+  opacity: 0.7;
+}*/
+
+/*.pag{
+align-items: center !imp;
+  }*/
+
+    </style>
+</head>
+<body>
+	<!-- <nav class="navbar navbar-expand-lg navbar-light bg-success sticky-top">
+  <a class="navbar-brand" id="navbarNav" href="#" style="font-family: italic; font-size: 30px; color: black; text-shadow: 2px white;">JAZZ TRAVEL</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html" style="font-size: 17px; color: black;" >Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="service.html" style="font-size: 17px; background-color:  #b3ffb3; border-radius: 4px;  color: black;" >Service<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="history.html" style="font-size: 17px; color: black;" >History<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="car.html" style="font-size: 17px;   color: black; " >Car Rental<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="gallary.html" style="font-size: 17px; color: black;" >Gallery<span class="sr-only">(current)</span></a>
+      </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="pages/Aboutus.html" style="font-size: 17px; color: black;" >About Us<span class="sr-only">(current)</span></a>
+      </li>
+      
+      
+
+      <li class="nav-item active">
+        <a class="nav-link" href="Contact.html" style="font-size: 17px; color: black;" >Contant Us<span class="sr-only">(current)</span></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-success sticky-top">
+  <a class="navbar-brand" id="navbarNav" href="#" style="font-family: italic; font-size: 30px; color: black; text-shadow: 2px white;">JAZZ TRAVEL</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html" style="font-size: 17px; color: black;" >Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="service.html" style="font-size: 17px; color: black; background-color:  #b3ffb3; border-radius: 4px;  color: black;" >Service<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="history.html" style="font-size: 17px;" >History<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="car.html" style="font-size: 17px;   color: black;" >Car Rental<span class="sr-only">(current)</span></a>
+      </li>
+    
+      <li class="nav-item active">
+        <a class="nav-link" href="gallary.html" style="font-size: 17px; color: black;" >Gallery<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="pages/Aboutus.html" style="font-size: 17px; color: black;" >About Us<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="Contact.html" style="font-size: 17px; color: black;" >Contant Us<span class="sr-only">(current)</span></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+<h1 style="margin-top: 100px; color: red;" align="center"><b>Booking Here</b></h1>
+<p align="center" style="font-family: Times New Roman; color: green"><b>Specialy Enjoy Your Trip</b></p>
+
+<hr>
+
+  <div class="container" style="margin-top: 100px; padding-bottom: px">
+    <div class="row">
+
+
+      <div class="col-md-6">
+        <h2 style="text-align: center; font-family: Bernard MT; text-shadow: ">Booking</h2>
+        
+        <a class="fac" href="www.facebook.com"><font color="blue" style="float: right;"><i class="fab fa-facebook-f"></i>www.facebook.com</font></a>
+         <form>
+            <div class="form-group">
+              <label for="usr"><b>Name&nbsp;</b></label><span class="input-group-addon"><i class="fas fa-user"></i></span>
+              <input type="text" class="form-control" id="usr" placeholder="name">
+            </div>
+
+          <b>Choose Date</b>
+          <span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+          <div class="input-group" style="">
+              <input id="date" type="date" class="form-control form-control-lg" name="date" placeholder="Date">
+          </div>
+
+          <b>Email &nbsp; @</b>
+         
+          <div class="input-group" style="">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="email" type="text" class="form-control form-control-lg" name="email" placeholder="Email">
+          </div>
+
+          <b>Member</b><i class="fa fa-users" color="red"></i>
+          <div class="input-group">
+            <span class="input-group-addon"></span>
+            <input id="number" type="number" class="form-control" name="number" placeholder="number of member">
+          </div>
+          <b>Passpoart/NRC No.</b>
+          <div class="input-group">
+            <input id="msg" type="text" class="form-control" name="msg" placeholder="Passpoart/NRC No">
+          </div>
+          <b>Places</b>
+          <div class="input-group">
+              
+                <select " class="form-control">
+                  <option>Mandalay</option>
+                  <option>Kyiet Htee yoe</option>
+                  <option>Inle</option>
+                  <option>Chaung Thar</option>
+                </select>
+              
+            </div>
+
+            <div><button class="btn btn-secondary">Submit</button></div>
+        </form> 
+      </div>
+
+
+
+
+      <div class="col-md-6">
+        
+        <div class="jumbotron">
+          <div class="row">
+           
+            <div class="col-md-6">
+              <a href="www.kbzbank.com"><img width="150px" src="logo/kbz.png"></a>
+            </div>
+            <div class="col-md-6">
+              ,<a href="www.cbbank.com"></a><img width="150px" style="margin-top: 20px;" src="logo/cb.png">
+            </div>
+        </div>
+    
+
+        <hr size="50px">
+        
+        <div class="row">
+          <div class="col-md-6">
+            <img width="150px"  style="margin-top: 20px;" src="logo/aya.png">
+          </div>
+          <div class="col-md-6">
+            <img width="150px" style="margin-top: 20px;" src="logo/agd.png">
+          </div>
+        </div>
+        <hr size="50px">
+        <div class="row">
+           
+            <div class="col-md-6">
+              <a href="www.kbzbank.com"><img width="150px" src="logo/kbz.png"></a>
+            </div>
+            <div class="col-md-6">
+              ,<a href="www.cbbank.com"></a><img width="150px" style="margin-top: 20px;" src="logo/cb.png">
+            </div>
+        </div>
+    
+
+        <hr size="50px">
+        
+        <div class="row">
+          <div class="col-md-6">
+            <img width="150px"  style="margin-top: 20px;" src="logo/aya.png">
+          </div>
+          <div class="col-md-6">
+            <img width="150px" style="margin-top: 20px;" src="logo/agd.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+</div>
+
+
+<div class="container-fluid" style="background-color: #ccffdd; padding: 30px;">
+  <h1 style="color: #ff471a; font-family: Britannic; padding:20px 30px;" align="center"><b><i><u>Hotel</u></i></b></h1>
+  <h4 align="center" style="font-family: Segoe Marker;"><b>Click to see more to get more information!!</b></h4>
+    <div class="row" style="margin-top: 50px;">
+      <div class="col-md-3">
+         
+          <div class="card">
+
+          <img src="hotel/mandalay/1.jpg" alt="Denim Jeans" style="width:100%" height="200px">
+          <h1>Mandalay</h1>
+          <p class="price">Mandalay Bay Hotel</p>
+          <p> (About Hotel)Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+         <a href="http://www.18002canyon.com/lodging/index.html" >  <button class="button"><span>See More </span></button></a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        
+        <div class="card">
+          <img src="hotel/kyiethteeyoe/1.jpg" alt="Denim Jeans" style="width:100%" height="200px">
+          <h1>Kyeit Htee Yoe </h1>
+          <p class="price">Bal Ga Thain Dee</p>
+          <p>(About Hotel)Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+          <a href="https://images.search.yahoo.com/yhs/search;_ylt=AwrVk6KTZg5c9xEAXkIPxQt.;_ylu=X3oDMTB0NjZjZzZhBGNvbG8DZ3ExBHBvcwMxBHZ0aWQDBHNlYwNwaXZz?p=hotel+in+kyeit+htee+yoe&type=hdr_s_18_48_jny_soverj_00_00&hspart=elm&hsimp=yhs-001&param1=1&param2=f%3D4%26b%3DFirefox%26cc%3Dus%26pa%3Dhodor%26cd%3D2XzuyEtN2Y1L1Qzu0FtDyByCtC0C0C0E0Czz0DtD0EtAtAyBtN0D0TzutN1L2XzuyEtFtAtBtFtDtFtAtN1L1CzutN1L1G1B1V1N2Y1L1Qzu2S1StB1T1QtB1PtAtBtGyBzyzytDtGyEyDzy1QtG1StBzzzytGyE1T1TzyzyzyyDyEtCyB1P1O2QtN1M1F1B2Z1V1N2Y1L1Qzu2S1P1PtCtAyCzztA1RtGyCyByCyBtGyEyDyD1StG1TtB1S1PtG1R1SyCzz1QtAyCtBtCyB1StB2QtN0A0LzuyEtN1B2Z1V1T1S1NzutN1Q2Z1B1P1Rzu%26cr%3D1574439733%26a%3Dhdr_s_18_48_jny_soverj_00_00%26os_ver%3D6.3%26os%3DWindows%2B8.1%2BPro&ei=UTF-8&fr=yhs-elm-001"><button class="button"><span>See More </span></button></a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        
+        <div class="card">
+          <img src="hotel/inle/1.jpg" alt="Denim Jeans" style="width:100%" height="200px">
+          <h1>Inle</h1>
+          <p class="price">Inle</p>
+          <p>(About Hotel)Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+          <a href="https://images.search.yahoo.com/yhs/search;_ylt=Awr9Ltb5Zg5cQS8AKmw2nIlQ;_ylu=X3oDMTBsZ29xY3ZzBHNlYwNzZWFyY2gEc2xrA2J1dHRvbg--;_ylc=X1MDMTM1MTE5NTcwMgRfcgMyBGFjdG4DY2xrBGJjawM4dWl2MTFkYmU1bGxkJTI2YiUzRDMlMjZzJTNENmwEY3NyY3B2aWQDOW5lVXJURXdMaktQUy5FTFZ1TFdyUUkwTVRBekxnQUFBQURDeTExQwRmcgN5aHMtZWxtLTAwMQRmcjIDc2EtZ3AEZ3ByaWQDBG10ZXN0aWQDbnVsbARuX3N1Z2cDMARvcmlnaW4DaW1hZ2VzLnNlYXJjaC55YWhvby5jb20EcG9zAzAEcHFzdHIDBHBxc3RybAMEcXN0cmwDMTMEcXVlcnkDaG90ZWwgaW4gaW5sZQR0X3N0bXADMTU0NDQ0Nzc3MwR2dGVzdGlkA251bGw-?pvid=9neUrTEwLjKPS.ELVuLWrQI0MTAzLgAAAADCy11C&p=hotel+in+inle&fr=yhs-elm-001&fr2=sb-top-images.search.yahoo.com&ei=UTF-8&n=60&x=wrt&type=hdr_s_18_48_jny_soverj_00_00&hsimp=yhs-001&hspart=elm&param1=1&param2=f%3D4%26b%3DFirefox%26cc%3Dus%26pa%3Dhodor%26cd%3D2XzuyEtN2Y1L1Qzu0FtDyByCtC0C0C0E0Czz0DtD0EtAtAyBtN0D0TzutN1L2XzuyEtFtAtBtFtDtFtAtN1L1CzutN1L1G1B1V1N2Y1L1Qzu2S1StB1T1QtB1PtAtBtGyBzyzytDtGyEyDzy1QtG1StBzzzytGyE1T1TzyzyzyyDyEtCyB1P1O2QtN1M1F1B2Z1V1N2Y1L1Qzu2S1P1PtCtAyCzztA1RtGyCyByCyBtGyEyDyD1StG1TtB1S1PtG1R1SyCzz1QtAyCtBtCyB1StB2QtN0A0LzuyEtN1B2Z1V1T1S1NzutN1Q2Z1B1P1Rzu%26cr%3D1574439733%26a%3Dhdr_s_18_48_jny_soverj_00_00%26os_ver%3D6.3%26os%3DWindows%2B8.1%2BPro"><button class="button"><span>See More </span></button></a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        
+        <div class="card">
+         <img src="hotel/chaungthar/1.jpg" alt="Denim Jeans" style="width:100%" height="200px">
+          <h1>Chaung Thar</h1>
+          <p class="price">Grand Hotel</p>
+          <p>(About Us)Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+         <a href="https://images.search.yahoo.com/yhs/search;_ylt=Awr9F69QZw5ceWkAqxk2nIlQ;_ylu=X3oDMTBsZ29xY3ZzBHNlYwNzZWFyY2gEc2xrA2J1dHRvbg--;_ylc=X1MDMTM1MTE5NTcwMgRfcgMyBGFjdG4DY2xrBGJjawM4dWl2MTFkYmU1bGxkJTI2YiUzRDMlMjZzJTNENmwEY3NyY3B2aWQDQWpuaXVqRXdMaktQUy5FTFZ1TFdyUUNlTVRBekxnQUFBQURIN2RqeQRmcgN5aHMtZWxtLTAwMQRmcjIDc2EtZ3AEZ3ByaWQDa0E5UWtqUXBSd1MzZl9XSFpzcS50QQRtdGVzdGlkA251bGwEbl9zdWdnAzAEb3JpZ2luA2ltYWdlcy5zZWFyY2gueWFob28uY29tBHBvcwMwBHBxc3RyAwRwcXN0cmwDBHFzdHJsAzIwBHF1ZXJ5A2hvdGVsIGluIGNoYXVuZyB0aGFyBHRfc3RtcAMxNTQ0NDQ3ODMxBHZ0ZXN0aWQDbnVsbA--?gprid=kA9QkjQpRwS3f_WHZsq.tA&pvid=AjniujEwLjKPS.ELVuLWrQCeMTAzLgAAAADH7djy&p=hotel+in+chaung+thar&fr=yhs-elm-001&fr2=sb-top-images.search.yahoo.com&ei=UTF-8&n=60&x=wrt&type=hdr_s_18_48_jny_soverj_00_00&hsimp=yhs-001&hspart=elm&param1=1&param2=f%3D4%26b%3DFirefox%26cc%3Dus%26pa%3Dhodor%26cd%3D2XzuyEtN2Y1L1Qzu0FtDyByCtC0C0C0E0Czz0DtD0EtAtAyBtN0D0TzutN1L2XzuyEtFtAtBtFtDtFtAtN1L1CzutN1L1G1B1V1N2Y1L1Qzu2S1StB1T1QtB1PtAtBtGyBzyzytDtGyEyDzy1QtG1StBzzzytGyE1T1TzyzyzyyDyEtCyB1P1O2QtN1M1F1B2Z1V1N2Y1L1Qzu2S1P1PtCtAyCzztA1RtGyCyByCyBtGyEyDyD1StG1TtB1S1PtG1R1SyCzz1QtAyCtBtCyB1StB2QtN0A0LzuyEtN1B2Z1V1T1S1NzutN1Q2Z1B1P1Rzu%26cr%3D1574439733%26a%3Dhdr_s_18_48_jny_soverj_00_00%26os_ver%3D6.3%26os%3DWindows%2B8.1%2BPro"> <button class="button"><span>See More </span></button></a>
+        </div>
+      </div>
+
+      <!-- pagination -->
+    
+  </div>
+</div>
+  <div class="container-fluid" style="background-color: #ccffdd;">
+    <div class="row">
+      <div class="col-md-4 offset-4">
+         <ul class="pagination content-center">
+            <li class="page-item"><a class="page-link" href="javascript:void(0);"><<</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">>></a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<div class="container-fluid" style="background-color:  #e6e6e6; padding-bottom: 50px;">
+  <h1 align="center" style="font-family: Goudy Stout; padding: 30px 0; color: #ff471a;" >Place</h1>
+  <h4 align="center" style="font-family: Segoe Marker; margin-bottom: 30px;"><b>Click to see more to get more information!!</b></h4>
+
+  
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+          <div class="container2">
+          <img src="place/bagan/1.jpg" alt="Avatar" class="image" style="width:100%; height: 200px;">
+          <div class="middle">
+         
+          </div>
+        </div>
+          <h1>Bagan</h1>
+          <p class="title">CEO & Founder, Example</p>
+          <p>Harvard University</p>
+          <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a> 
+            <a href="#"><i class="fa fa-twitter"></i></a>  
+            <a href="#"><i class="fa fa-linkedin"></i></a>  
+            <a href="#"><i class="fa fa-facebook"></i></a> 
+         </div>
+         <button class="button"><span>See More </span></button>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+          <div class="container1">
+          <img src="place/bagan/2.jpg" alt="Avatar" class="image1" style="width:100%; height:200px;">
+          <div class="middle1">
+          
+          </div>
+        </div>
+          <h1>John Doe</h1>
+          <p class="title">CEO & Founder, Example</p>
+          <p>Harvard University</p>
+          <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a> 
+            <a href="#"><i class="fa fa-twitter"></i></a>  
+            <a href="#"><i class="fa fa-linkedin"></i></a>  
+            <a href="#"><i class="fa fa-facebook"></i></a> 
+         </div>
+         <button class="button"><span>See More </span></button>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+          <div class="container2">
+          <img src="place/kyi/2.png" alt="Avatar" class="image" style="width:100%; height: 200px;">
+          <div class="middle">
+         
+          </div>
+        </div>
+          <h1>John Doe</h1>
+          <p class="title">CEO & Founder, Example</p>
+          <p>Harvard University</p>
+          <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a> 
+            <a href="#"><i class="fa fa-twitter"></i></a>  
+            <a href="#"><i class="fa fa-linkedin"></i></a>  
+            <a href="#"><i class="fa fa-facebook"></i></a> 
+         </div>
+         <button class="button"><span>See More </span></button>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+          <div class="container1">
+          <img src="place/kyi/1.jpg" alt="Avatar" class="image1" style="width:100%; height:200px;">
+          <div class="middle1">
+          
+          </div>
+        </div>
+          <h1>John Doe</h1>
+          <p class="title">CEO & Founder, Example</p>
+          <p>Harvard University</p>
+          <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a> 
+            <a href="#"><i class="fa fa-twitter"></i></a>  
+            <a href="#"><i class="fa fa-linkedin"></i></a>  
+            <a href="#"><i class="fa fa-facebook"></i></a> 
+         </div>
+         <button class="button"><span>See More </span></button>
+        </div>
+    </div>
+
+    
+  </div>
+
+</div>
+<div class="container-fluid" style="background-color: #e6e6e6;">
+    <div class="row">
+      <div class="col-md-4 offset-4">
+         <ul class="pagination content-center">
+            <li class="page-item"><a class="page-link" href="javascript:void(0);"><<</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">>></a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+<hr>
+<div class="footer" style="background-color: #000; padding: 50px;">
+  <p align="center" style="color:#b3ffd9">&copy www.jazztraveling.com</p>
+</div>
+
+  
+
+</body>
+</html>
